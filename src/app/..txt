@@ -1,0 +1,194 @@
+"use client";
+// import Image from "next/image";
+// import React, { useEffect, useRef } from "react";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// const Banner = () => {
+//   const bannerContainerRef = useRef(null)
+//   const bannerTextRef = useRef(null);
+//   const topImageRef = useRef(null);
+//   const bottomImageRef = useRef(null);
+
+//   const imgsrc = [
+//     {
+//       src: "https://images.pexels.com/photos/6775268/pexels-photo-6775268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     },
+//     {
+//       src: "https://images.pexels.com/photos/4365100/pexels-photo-4365100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+//     },
+//   ];
+
+//   useEffect(() => {
+//     gsap.registerPlugin(ScrollTrigger);
+
+//     // Animation for top image
+//     gsap.fromTo(
+//       topImageRef.current,
+//       { y: "-100vh" },
+//       {
+//         y: 0,
+//         ease: "none",
+//         scrollTrigger: {
+//           trigger: topImageRef.current,
+//           start: "bottom top",
+//           end: "200% 30%",
+//           scrub: true,
+//           markers: true,
+//         },
+//       }
+//     );
+
+//     // Animation for pinned banner text
+//     gsap.fromTo(
+//       bannerTextRef.current,
+//       { scale: 1, opacity: 1 },
+//       {
+//         scale: 0.9,
+//         opacity: 0.2,
+//         scrollTrigger: {
+//           trigger: bannerTextRef.current,
+//           start: "top 30%",
+//           end: "top top",
+//           scrub: true,
+//           // pin: true,
+//           pinType: "fixed",
+//           pinSpacing: false,
+//           // markers: true,
+//         },
+//       }
+//     );
+
+//     // Animation for bottom image
+//     // gsap.fromTo(
+//     //   bottomImageRef.current,
+//     //   { y: "100vh" },
+//     //   {
+//     //     y: "0vh",
+//     //     ease: "none",
+//     //     scrollTrigger: {
+//     //       trigger: bottomImageRef.current,
+//     //       start: "top bottom",
+//     //       end: "top center",
+//     //       scrub: true,
+//     //       markers: true,
+//     //     },
+//     //   }
+//     // );
+//   }, []);
+
+//   return (
+//     <>
+//       <div ref={bannerContainerRef} className="banner relative">
+//         <div
+//           className="img-cont-1 flex justify-center w-full z-20"
+//           ref={topImageRef}
+//         >
+//           <div className="w-80 h-[27rem] mx-20">
+//             <Image
+//               width={1000}
+//               height={1000}
+//               src="https://images.pexels.com/photos/1040893/pexels-photo-1040893.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+//               alt="Interior Architecture"
+//               className="object-cover w-full h-full"
+//             />
+//           </div>
+//         </div>
+//         <div className="banner-container min-h-screen px-[5%] max-w-[100rem] mx-auto flex items-center justify-center z-0">
+//           <h1
+//             ref={bannerTextRef}
+//             className="banner-text text-center font-bold abhaya-libre-extrabold sticky top-[30%]"
+//           >
+//             <p className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl xl:tracking-[35px] lg:tracking-[25px] md:tracking-[20px] sm:tracking-[15px] tracking-[10px]">
+//               LEGO HOUSE
+//             </p>
+//             <p className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl tracking-wider mt-5">
+//               ARCHITECTS
+//             </p>
+//           </h1>
+//         </div>
+//         {/* <div
+//           className="img-cont-2 flex justify-between w-full mx-auto z-20"
+//           ref={bottomImageRef}
+//         >
+//           {imgsrc.map((src, index) => (
+//             <div className="w-80 h-[27rem] mx-20" key={index}>
+//               <Image
+//                 width={1000}
+//                 height={1000}
+//                 src={src.src}
+//                 alt="Interior Architecture"
+//                 className="object-cover w-full h-full"
+//               />
+//             </div>
+//           ))}
+//         </div> */}
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Banner;
+
+
+
+
+
+
+
+
+
+
+
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   gsap.fromTo(
+  //     topImageRef.current,
+  //     {y: "-100vh",  }, // Start from -100vh
+  //     {
+  //       y: "110vh",
+  //       ease:"power1.inOut",// Move to 0vh
+  //       scrollTrigger: {
+  //         trigger: bannerContainerRef.current,
+  //         start: "top top", // Start animation when the top of container hits the top of viewport
+  //         end: "bottom bottom", // End when bottom of container reaches the top of viewport
+  //         scrub: true, // Sync animation with scroll
+  //         markers: true, // Set true for debug
+  //       },
+  //     }
+  //   );
+
+  //   // Middle text remains fixed
+  //   gsap.fromTo(
+  //     bannerTextRef.current,
+  //     { opacity: 1, scale: 1 }, // Remain fixed
+  //     {
+  //       opacity: 0.3,
+  //       scale: 0.8, // No movement
+  //       scrollTrigger: {
+  //         trigger: bannerContainerRef.current,
+  //         start: "top top", // Start when top of container enters viewport
+  //         end: "bottom top", // Ends when bottom of container leaves viewport
+  //         scrub: true,
+  //         // pin: true, // Keep this element pinned
+  //         markers: false, // Set true for debug
+  //       },
+  //     }
+  //   );
+
+  //   // Bottom images scroll up by 100vh
+  //   gsap.fromTo(
+  //     bottomImageRef.current,
+  //     { y: "100vh" }, // Start from 100vh
+  //     {
+  //       y: "-10vh", // Move to 0vh
+  //       scrollTrigger: {
+  //         trigger: bannerContainerRef.current,
+  //         start: "top top",
+  //         end: "bottom top",
+  //         scrub: true,
+  //         markers: true, // Set true for debug
+  //       },
+  //     }
+  //   );
+  // }, []);
